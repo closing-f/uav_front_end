@@ -1,6 +1,6 @@
 <template>
   <div id="uav_ui">
-    <b-navbar toggleable="lg" type="light" variant="light">
+    <!-- <b-navbar toggleable="lg" type="light" variant="light">
       <b-navbar-brand href="#">Uav Data Acquisition</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -11,10 +11,8 @@
 
         </b-navbar-nav>
 
-        <!-- Right aligned nav items -->
-
       </b-collapse>
-    </b-navbar>
+    </b-navbar> -->
     <br>
     <div class="row">
       <div class="col-sm-3">
@@ -22,7 +20,7 @@
 
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">AoI time series diagram for each sensor</h4>
+            <h2 class="card-title">各传感器AoI 时间序列图</h2>
 
 
             <div id='myChart'  style="width: 100%; height: 300px">
@@ -45,7 +43,8 @@
         <br>
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Overall AoI time series diagram</h4>
+            <h2 class="card-title">传感器平均AoI 时间序列图</h2>
+            <br>
 
 
 
@@ -65,17 +64,18 @@
 
           <div class="card border-primary mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
-              <div class="col-md-4">
+              <div class="col-md-3">
 
                 <br>
-                <img src="https://s2.loli.net/2024/03/09/VM8Wu1nlJyS94XR.png"  style="width: 150%; height: 70%" class="rounded mx-auto d-block" alt="...">
+                <br><br>
+                <img src="https://s2.loli.net/2024/03/09/VM8Wu1nlJyS94XR.png"  style="width: 150%; height: 40%" class="rounded mx-auto d-block" alt="...">
               </div>
-              <div class="col-md-8">
+              <div class="col-md-9">
                 <div class="card-body">
                   <ul class="list-group list-group-flush left">
-                    <li class="list-group-item text-left">电量：{{uav_state[0].battery}}</li>
-                    <li class="list-group-item text-left">传输成功率：{{uav_state[0].success_rate}}</li>
-                    <li class="list-group-item text-left">接受包大小：{{uav_state[0].pacakge_len}}</li>
+                    <li class="list-group-item text-left"><h3>电量:{{uav_state[0].battery}}</h3></li>
+                    <li class="list-group-item text-left"><h3>传输成功率:{{uav_state[0].success_rate}}</h3></li>
+                    <li class="list-group-item text-left"><h3>接受包大小:{{uav_state[0].pacakge_len}}</h3></li>
                   </ul>
                 </div>
               </div>
@@ -87,17 +87,18 @@
 
             <div class="card border-primary mb-3" style="max-width: 540px;">
               <div class="row no-gutters">
-                <div class="col-md-4">
+                <div class="col-md-3">
 
                   <br>
-                  <img src="https://s2.loli.net/2024/03/09/VM8Wu1nlJyS94XR.png"  style="width: 150%; height: 70%" class="rounded mx-auto d-block" alt="...">
+                <br><br>
+                  <img src="https://s2.loli.net/2024/03/09/VM8Wu1nlJyS94XR.png"  style="width: 150%; height: 40%" class="rounded mx-auto d-block" alt="...">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                   <div class="card-body">
-                    <ul class="list-group list-group-flush left">
-                      <li class="list-group-item text-left">电量：{{uav_state[1].battery}}</li>
-                      <li class="list-group-item text-left">传输成功率：{{uav_state[1].success_rate}}</li>
-                      <li class="list-group-item text-left">接受包大小：{{uav_state[1].pacakge_len}}</li>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><h3>电量：{{uav_state[1].battery}}</h3></li>
+                      <li class="list-group-item text-left"><h3>传输成功率:{{uav_state[1].success_rate}}</h3></li>
+                     <li class="list-group-item text-left"><h3>接受包大小:{{uav_state[1].pacakge_len}}</h3></li>
                     </ul>
                   </div>
                 </div>
@@ -108,17 +109,19 @@
 
             <div class="card border-primary mb-3" style="max-width: 540px;">
               <div class="row no-gutters">
-                <div class="col-md-4">
+                <div class="col-md-3">
 
                   <br>
-                  <img src="https://s2.loli.net/2024/03/09/VM8Wu1nlJyS94XR.png"  style="width: 150%; height: 70%" class="rounded mx-auto d-block" alt="...">
+                  <br>
+                  <br>
+                  <img src="https://s2.loli.net/2024/03/09/VM8Wu1nlJyS94XR.png"  style="width: 150%; height: 40%" class="rounded mx-auto d-block" alt="...">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                   <div class="card-body">
                     <ul class="list-group list-group-flush left">
-                      <li class="list-group-item text-left">电量：{{uav_state[2].battery}}</li>
-                      <li class="list-group-item text-left">传输成功率：{{uav_state[2].success_rate}}</li>
-                      <li class="list-group-item text-left">接受包大小：{{uav_state[2].pacakge_len}}</li>
+                      <li class="list-group-item text-left"><h3>电量：{{uav_state[2].battery}}</h3></li>
+                      <li class="list-group-item text-left"><h3>传输成功率:{{uav_state[2].success_rate}}</h3></li>
+                      <li class="list-group-item text-left"><h3>接受包大小:{{uav_state[2].pacakge_len}}</h3></li>
                     </ul>
                   </div>
                 </div>
@@ -128,65 +131,46 @@
 
 
         </div>
-        <br>
-        <br>
-        <br>
+        
         <b-row>
         <div class="card col-sm-12">
           <div class="card-body">
-            <h4 class="card-title">Virtual UAV Map</h4>
-            <!-- <img src="https://s2.loli.net/2022/12/08/L9nPoafYA6FTctB.png" class="img_uav" alt="..."> -->
-
-            <!-- <img src="https://s2.loli.net/2022/12/03/l4Pw5UZhgyxH2t8.png" class="img-fluid border-primary"  alt="..."> -->
+           
+          
 
              <video class="col-sm-12" id="video1">
-               <source src="./Greedy.mp4" type="video/mp4">
-               <source src="/Greedy.ogg"  type="video/ogg">
+               <source src="./RealUAV.mp4" type="video/mp4">
+               <source src="/RealUAV.ogg"  type="video/ogg">
              </video>
-
-
-
-            <!-- <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Q2WHGpGtKRI" allowfullscreen></iframe>
-    </div> -->
             <br>
             <br>
-            <br>
-            <br>
+          
             <div class="row">
               <div class="col-sm-6"><button type="button" @click="playVid" class="btn btn-primary btn-lg btn-block">{{video_state}}</button>
               </div>
 
               <div class="col-sm-6">
-                <button type="button" @click="resetVid" class="btn btn-secondary btn-lg btn-block">Reset</button>
+                <button type="button" @click="resetVid" class="btn btn-secondary btn-lg btn-block">重置</button>
               </div>
             </div>
 
           </div>
         </div>
 
-<!--          <div class="card col-sm-5">-->
-<!--            <div class="card-body">-->
-<!--              <h4 class="card-title">Real UAV Map</h4>-->
-<!--              &lt;!&ndash; <img src="https://s2.loli.net/2022/12/08/L9nPoafYA6FTctB.png" class="img_uav" alt="..."> &ndash;&gt;-->
+         <!-- <div class="card col-sm-5">
+           <div class="card-body">
+             <h4 class="card-title">Real UAV Map</h4>
+            
 
-<!--              &lt;!&ndash; <img src="https://s2.loli.net/2022/12/03/l4Pw5UZhgyxH2t8.png" class="img-fluid border-primary"  alt="..."> &ndash;&gt;-->
-
-<!--              <img  src=" https://s2.loli.net/2024/03/09/GFbfvWD2jJLU3r8.jpg" class="img-fluid border-primary"  alt="...">-->
-
-
-
-<!--              &lt;!&ndash; <div class="embed-responsive embed-responsive-16by9">-->
-<!--        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Q2WHGpGtKRI" allowfullscreen></iframe>-->
-<!--      </div> &ndash;&gt;-->
-<!--              <br>-->
-<!--              <br>-->
-<!--              <br>-->
-<!--              <br>-->
+             <img  src=" https://s2.loli.net/2024/03/09/GFbfvWD2jJLU3r8.jpg" class="img-fluid border-primary"  alt="...">   
+             <br>
+             <br>
+             <br>
+             <br>
 
 
-<!--            </div>-->
-<!--        </div>-->
+           </div>
+       </div> -->
 
 
         </b-row>
@@ -195,7 +179,9 @@
         <div class="row-sm-6">
           <div class="card" style="width: 100%; height: 100%">
             <div class="card-body">
-              <h4 class="card-title">Sensor data freshness diagram</h4>
+              <h2 class="card-title">传感器数据新鲜度饼图</h2>
+              <br>
+              
               <div id="piechart" style="width: 100%; height: 300px"></div>
               <!-- <img src="https://s2.loli.net/2022/12/04/JLPQFX8YuwgBoim.png" class="img-fluid border-primary"  alt="..."> -->
 
@@ -213,8 +199,8 @@
         <div class="row-sm-6">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Algorithm effect comparison diagram (Todo)</h4>
-
+              <h2 class="card-title">算法效果对比图</h2>
+              <br>
               <img src="https://s2.loli.net/2022/12/04/49HRFO5CLDeT8f6.png"  style="width: 100%; height: 300px" class="img-fluid border-primary"  alt="...">
 
             </div>
@@ -232,7 +218,7 @@ export default {
   data(){
     return {
       start_pause:true,
-      video_state:"Start",
+      video_state:"开始",
       time_step:1,
       average_time_step:1,
       average_date:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
@@ -274,7 +260,7 @@ export default {
         [1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5,],
         [1,2,3,4,5,6,7,8,9,10,10,10,10,10,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,],
         [1,2,3,0,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5,6,7,8,9,10,10,0,0,0,0,0,],
-        [1,2,3,0,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5,6,7,8,9,10,10,0,0,0,0,0,],
+        [1,2,3,4,5,0,1,2,3,4,5,6,7,0,0,0,0,0,0,1,2,3,4,5,6,7,0,0,0,0,],
         [1,2,3,2,1.25,1.5,1.75,2,2.25,2.5,2.5,2.5,2.5,2.5,2.75,3,0.75,1,1.25,1.5,1.75,2,2.25,2.5,2.75,0.25,0.5,0.75,1,1.25,],
       ],
       pie_excel:[
@@ -293,12 +279,13 @@ export default {
         backgroundColor: '#FFFAF0',
         legend: {
           data: ['Sensor1', 'Sensor2','Sensor3','Sensor4','Sensor5'],
+        
         },
         xAxis: {
           name: 'Time',
           nameTextStyle: {
             fontWeight: 600,
-            fontSize: 18
+            fontSize: 25
           },
 
           type: 'category',
@@ -310,7 +297,7 @@ export default {
           name: 'AoI ',
           nameTextStyle: {
             fontWeight: 600,
-            fontSize: 18
+            fontSize: 25
           },
 
           type: 'value',
@@ -414,7 +401,7 @@ export default {
           name: 'Time',
           nameTextStyle: {
             fontWeight: 600,
-            fontSize: 18
+            fontSize: 25
           },
 
           type: 'category',
@@ -426,7 +413,7 @@ export default {
           name: 'AoI ',
           nameTextStyle: {
             fontWeight: 600,
-            fontSize: 18
+            fontSize: 25
           },
 
           type: 'value',
@@ -491,7 +478,7 @@ export default {
             emphasis: {
               label: {
                 show: true,
-                fontSize: 20,
+                fontSize: 30,
                 fontWeight: 'bold'
               }
             },
@@ -558,12 +545,12 @@ export default {
       var myVideo=document.getElementById("video1");
       if(this.start_pause==true){
         myVideo.play();
-        this.video_state="Pause"
+        this.video_state="暂停"
         this.start_pause=false;
       }
       else{
         myVideo.pause();
-        this.video_state="Start"
+        this.video_state="开始"
         this.start_pause=true;
       }
 
